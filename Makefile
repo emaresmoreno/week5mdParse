@@ -1,4 +1,4 @@
-Markdown.class: MarkdownParse.java
+MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
 
 MarkdownTest.class: MarkdownParse.java WordCount.class

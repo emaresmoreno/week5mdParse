@@ -3,6 +3,7 @@ import java.nio.file.Path;
 import org.junit.*;
 import java.nio.file.Files;
 import java.util.*;
+import java.io.IOException;
 
 
 
@@ -171,6 +172,31 @@ public class MarkdownParseTest {
         } catch (Exception e) {
             System.out.println("Error: file not found!");
         }
+
+    }
+
+    @Test
+    public void testMarkdownParseSnippet1() throws IOException {
+        Path whichTest = Path.of("snippet1.md");
+        String contents = Files.readString(whichTest);
+        ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("`google.com"), inputResult);
+    }
+
+    @Test
+    public void testMarkdownParseSnippet2() throws IOException{
+        Path whichTest = Path.of("snippet2.md");
+        String contents = Files.readString(whichTest);
+        ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("`google.com"), inputResult);
+
+    }
+    @Test
+    public void testMarkdownSnippet3() throws IOException{
+        Path whichTest = Path.of("snippet3.md");
+        String contents = Files.readString(whichTest);
+        ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("`google.com"), inputResult);
 
     }
 

@@ -180,7 +180,7 @@ public class MarkdownParseTest {
         Path whichTest = Path.of("snippet1.md");
         String contents = Files.readString(whichTest);
         ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("`google.com"), inputResult);
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), inputResult);
     }
 
     @Test
@@ -188,7 +188,7 @@ public class MarkdownParseTest {
         Path whichTest = Path.of("snippet2.md");
         String contents = Files.readString(whichTest);
         ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("`google.com"), inputResult);
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), inputResult);
 
     }
     @Test
@@ -196,7 +196,7 @@ public class MarkdownParseTest {
         Path whichTest = Path.of("snippet3.md");
         String contents = Files.readString(whichTest);
         ArrayList<String> inputResult = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("`google.com"), inputResult);
+        assertEquals(List.of("https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/"), inputResult);
 
     }
 
